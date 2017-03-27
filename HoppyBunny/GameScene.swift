@@ -104,6 +104,47 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    func updateObstacles() {
+        /* Update Obstacles */
+        
+        obstacleLayer.position.x -= scrollSpeed * CGFloat(fixedDelta)
+        
+        /* Loop through obstacle layer nodes */
+        for obstacle in obstacleLayer.children as! [SKReferenceNode] {
+            
+            /* Get obstacle node position, convert node position to scene space */
+            let obstaclePosition = obstacleLayer.convert(obstacle.position, to: self)
+            
+            
+            
+            /* Check if obstacle has left the scene */
+            if obstaclePosition.x <= 0 {
+                
+                /* Remove obstacle node from obstacle layer */
+                obstacle.removeFromParent()
+            }
+            
+        }
+        /* Time to add a new obstacle? */
+        if spawnTimer >= 1.5 {
+            
+            /* Create a new obstacle reference object using our obstacle resource */
+            let resourcePath = Bundle.main.path(forResource: "Obstacle", ofType: "sks")
+            let newObstacle = SKReferenceNode(url: NSURL(fileURLWithPath: resourcePath!) as URL)
+            obstacleLayer.addChild(newObstacle)
+            
+            /* Generate new obstacle position, start just outside screen and with a random y value */
+            let randomPosition = CGPoint(x: 352, y: CGFloat.random(min: 234, max: 382))
+            
+            /* Convert new node position back to obstacle layer space */
+            newObstacle.position = self.convert(randomPosition, to: obstacleLayer)
+            
+            // Reset spawn timer
+            spawnTimer = 0
+        }
+        
+    }
 
 }
 
