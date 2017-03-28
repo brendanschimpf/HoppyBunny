@@ -17,6 +17,7 @@
 		D79AA9211E800D45005B41DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79AA9201E800D45005B41DA /* Assets.xcassets */; };
 		D79AA9241E800D45005B41DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D79AA9221E800D45005B41DA /* LaunchScreen.storyboard */; };
 		D79AA92C1E8010EE005B41DA /* Hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = D79AA92B1E8010EE005B41DA /* Hero.sks */; };
+		D7BDD3D61E8A9E7600425896 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BDD3D51E8A9E7600425896 /* MSButtonNode.swift */; };
 		D7C0EC6D1E82AD650099D119 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0EC6C1E82AD650099D119 /* CGFloat+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		D79AA9231E800D45005B41DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D79AA9251E800D45005B41DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D79AA92B1E8010EE005B41DA /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
+		D7BDD3D51E8A9E7600425896 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 		D7C0EC6C1E82AD650099D119 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				D79AA9221E800D45005B41DA /* LaunchScreen.storyboard */,
 				D79AA9251E800D45005B41DA /* Info.plist */,
 				D7C0EC6C1E82AD650099D119 /* CGFloat+Extensions.swift */,
+				D7BDD3D51E8A9E7600425896 /* MSButtonNode.swift */,
 			);
 			path = HoppyBunny;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				D79AA91C1E800D45005B41DA /* GameViewController.swift in Sources */,
 				D7C0EC6D1E82AD650099D119 /* CGFloat+Extensions.swift in Sources */,
 				D79AA9141E800D45005B41DA /* AppDelegate.swift in Sources */,
+				D7BDD3D61E8A9E7600425896 /* MSButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

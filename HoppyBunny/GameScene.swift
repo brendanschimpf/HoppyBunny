@@ -8,13 +8,14 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var hero: SKSpriteNode!
     var scrollLayer: SKNode!
     var sinceTouch : TimeInterval = 0
     var spawnTimer: TimeInterval = 0
     var obstacleLayer: SKNode!
+    var buttonRestart: MSButtonNode!
     let fixedDelta: TimeInterval = 1.0/60.0 /* 60 FPS */
     let scrollSpeed: CGFloat = 160
     
@@ -29,6 +30,32 @@ class GameScene: SKScene {
         
         /* Set reference to obstacle layer node */
         obstacleLayer = self.childNode(withName: "obstacleLayer")
+        
+        /* Set physics contact delegate */
+        physicsWorld.contactDelegate = self
+        
+        /* Set UI connections */
+        buttonRestart = self.childNode(withName: "buttonRestart") as! MSButtonNode
+        
+        /* Setup restart button selection handler */
+        buttonRestart.selectedHandler = { [unowned self] in
+            
+            /* Grab reference to our SpriteKit view */
+            let skView = self.view as SKView!
+            
+            /* Load Game scene */
+            let scene = GameScene(fileNamed:"GameScene") as GameScene!
+            
+            /* Ensure correct aspect mode */
+            scene?.scaleMode = .aspectFill
+            
+            /* Restart game scene */
+            skView?.presentScene(scene)
+            
+        }
+        
+        /* Hide restart button */
+        buttonRestart.state = .hidden
         
     }
     
@@ -79,7 +106,11 @@ class GameScene: SKScene {
         /* Process world scrolling */
         scrollWorld()
 
-           
+        /* Calls for updateObstackes */
+        updateObstacles()
+        
+        /* Spawn Timer */
+        spawnTimer += fixedDelta
             
     }
     
@@ -113,6 +144,7 @@ class GameScene: SKScene {
         /* Loop through obstacle layer nodes */
         for obstacle in obstacleLayer.children as! [SKReferenceNode] {
             
+            
             /* Get obstacle node position, convert node position to scene space */
             let obstaclePosition = obstacleLayer.convert(obstacle.position, to: self)
             
@@ -144,6 +176,11 @@ class GameScene: SKScene {
             spawnTimer = 0
         }
         
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        /* Hero touches anything, game over */
+        print("TODO: Add contact code")
     }
 
 }
