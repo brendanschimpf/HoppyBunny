@@ -58,6 +58,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             /* Ensure correct aspect mode */
             scene?.scaleMode = .aspectFill
             
+            /* Reset Score label */
+            self.scoreLabel.text = String(self.points)
+            
             /* Restart game scene */
             skView?.presentScene(scene)
             
@@ -66,15 +69,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Hide restart button */
         buttonRestart.state = .hidden
         
-        /* Reset Score label */
-        scoreLabel.text = String(points)
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         /* Disable touch if game state is not active */
         if gameState != .Active { return }
+        
+        /* Play SFX */
+        let flapSFX = SKAction.playSoundFileNamed("SFX/sfx_flap", waitForCompletion: false)
+        self.run(flapSFX)
         
         /* Reset velocity, helps improve response against cumulative falling velocity */
         hero.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
@@ -89,11 +93,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /* Reset touch timer */
         sinceTouch = 0
-        
-        /* Play SFX */
-        let flapSFX = SKAction.playSoundFileNamed("SFX/sfx_flap", waitForCompletion: false)
-        self.run(flapSFX)
-        
         
     }
     
@@ -200,8 +199,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
+        
         /* Ensure only called while game running */
         if gameState != .Active { return }
+        
+        /* Get references to bodies involved in collision */
+        let contactA:SKPhysicsBody = contact.bodyA
+        let contactB:SKPhysicsBody = contact.bodyB
+        
+        /* Get references to the physics body parent nodes */
+        let nodeA = contactA.node!
+        let nodeB = contactB.node!
+        
+        /* Did our hero pass through the 'goal'? */
+        if nodeA.name == "goal" || nodeB.name == "goal" {
+            
+            /* Increment points */
+            points += 1
+            
+            /* Update score label */
+            scoreLabel.text = String(points)
+            
+            /* We can return now */
+            return
+        }
         
         /* Hero touches anything, game over */
         

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C6A1B6011E8C788500B2BED4 /* GameEffects.sks in Resources */ = {isa = PBXBuildFile; fileRef = C6A1B6001E8C788500B2BED4 /* GameEffects.sks */; };
+		D70ED9F91E8D3CAC00D82824 /* sfx_goal.caf in Resources */ = {isa = PBXBuildFile; fileRef = D70ED9F71E8D3CAC00D82824 /* sfx_goal.caf */; };
 		D775850E1E840771008870D4 /* Obstacle.sks in Resources */ = {isa = PBXBuildFile; fileRef = D775850D1E840771008870D4 /* Obstacle.sks */; };
 		D79AA9141E800D45005B41DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79AA9131E800D45005B41DA /* AppDelegate.swift */; };
 		D79AA9161E800D45005B41DA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D79AA9151E800D45005B41DA /* GameScene.sks */; };
@@ -24,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		C6A1B6001E8C788500B2BED4 /* GameEffects.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameEffects.sks; sourceTree = "<group>"; };
+		D70ED9F71E8D3CAC00D82824 /* sfx_goal.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_goal.caf; sourceTree = "<group>"; };
+		D70ED9FA1E8D401500D82824 /* sfx_flap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = sfx_flap.caf; path = ../../sfx_flap.caf; sourceTree = "<group>"; };
 		D775850D1E840771008870D4 /* Obstacle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle.sks; sourceTree = "<group>"; };
 		D79AA9101E800D45005B41DA /* HoppyBunny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoppyBunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79AA9131E800D45005B41DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +54,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D70ED9F51E8D3CAC00D82824 /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				D70ED9FA1E8D401500D82824 /* sfx_flap.caf */,
+				D70ED9F71E8D3CAC00D82824 /* sfx_goal.caf */,
+			);
+			name = SFX;
+			path = HoppyBunny/SFX2;
+			sourceTree = "<group>";
+		};
 		D79AA9071E800D44005B41DA = {
 			isa = PBXGroup;
 			children = (
 				D79AA9121E800D45005B41DA /* HoppyBunny */,
+				D70ED9F51E8D3CAC00D82824 /* SFX */,
 				D79AA9111E800D45005B41DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A1B6011E8C788500B2BED4 /* GameEffects.sks in Resources */,
+				D70ED9F91E8D3CAC00D82824 /* sfx_goal.caf in Resources */,
 				D79AA91F1E800D45005B41DA /* Main.storyboard in Resources */,
 				D79AA9161E800D45005B41DA /* GameScene.sks in Resources */,
 				D79AA9211E800D45005B41DA /* Assets.xcassets in Resources */,
