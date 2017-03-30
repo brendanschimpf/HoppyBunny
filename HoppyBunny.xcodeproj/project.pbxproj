@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6A1B6011E8C788500B2BED4 /* GameEffects.sks in Resources */ = {isa = PBXBuildFile; fileRef = C6A1B6001E8C788500B2BED4 /* GameEffects.sks */; };
 		D775850E1E840771008870D4 /* Obstacle.sks in Resources */ = {isa = PBXBuildFile; fileRef = D775850D1E840771008870D4 /* Obstacle.sks */; };
 		D79AA9141E800D45005B41DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79AA9131E800D45005B41DA /* AppDelegate.swift */; };
 		D79AA9161E800D45005B41DA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D79AA9151E800D45005B41DA /* GameScene.sks */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6A1B6001E8C788500B2BED4 /* GameEffects.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameEffects.sks; sourceTree = "<group>"; };
 		D775850D1E840771008870D4 /* Obstacle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle.sks; sourceTree = "<group>"; };
 		D79AA9101E800D45005B41DA /* HoppyBunny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoppyBunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79AA9131E800D45005B41DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				D79AA92B1E8010EE005B41DA /* Hero.sks */,
 				D79AA9171E800D45005B41DA /* Actions.sks */,
 				D79AA9191E800D45005B41DA /* GameScene.swift */,
+				C6A1B6001E8C788500B2BED4 /* GameEffects.sks */,
 				D775850D1E840771008870D4 /* Obstacle.sks */,
 				D79AA91B1E800D45005B41DA /* GameViewController.swift */,
 				D79AA91D1E800D45005B41DA /* Main.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A1B6011E8C788500B2BED4 /* GameEffects.sks in Resources */,
 				D79AA91F1E800D45005B41DA /* Main.storyboard in Resources */,
 				D79AA9161E800D45005B41DA /* GameScene.sks in Resources */,
 				D79AA9211E800D45005B41DA /* Assets.xcassets in Resources */,
